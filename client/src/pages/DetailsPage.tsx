@@ -4,8 +4,15 @@ import axios from "axios";
 
 const DetailsPage = () => {
   const location = useLocation();
-  const book = location.state.book;
   const navigate = useNavigate();
+
+  if (!location.state?.book) {
+    alert("잘못된 접근입니다. 다시 시도해주세요.");
+    navigate("/");
+    return null;
+  }
+
+  const book = location.state.book;
 
   const handleEdit = () => {
     navigate(`/books/edit`, { state: { book } });

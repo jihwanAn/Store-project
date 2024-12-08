@@ -52,6 +52,8 @@ const AddBookPage = () => {
         navigate("/");
       }
     } catch (error) {
+      alert("정상적으로 추가하지 못했습니다. 잠시 후 다시 시도해 주세요.");
+      navigate("/");
       console.log("error");
     }
   };

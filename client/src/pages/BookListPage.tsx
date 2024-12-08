@@ -34,6 +34,7 @@ const BookListPage: React.FC = () => {
           }));
         }
       } catch (error) {
+        alert("서버를 준비 중입니다. 잠시 후 다시 시도해 주세요.");
         console.log(error);
       }
     };
