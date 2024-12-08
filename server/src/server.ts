@@ -5,7 +5,15 @@ import { getBooks, addBook, deleteBook } from "./routers/books";
 const app = express();
 const PORT = 8080;
 
-app.use(cors());
+// cors 설정: 클라이언트 도메인
+const allowedOrigin = ["https://free-book-store.netlify.app"];
+
+app.use(
+  cors({
+    origin: allowedOrigin,
+  })
+);
+
 app.use(express.json());
 
 app.get("/books", getBooks);
